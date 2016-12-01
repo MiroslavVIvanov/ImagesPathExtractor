@@ -2,13 +2,10 @@
 {
     using System.ComponentModel;
     using Contracts;
+    using Common;
 
     public class MainWindowDataContex : IDataContext, INotifyPropertyChanged
     {
-        private const string DefaultImportFolderPath = @"C:\BBB";
-        private const string DefaultExportFileName = "ImagesPaths";
-        private const string DefaultExportFolderPath = @"C:\BBB";
-
         private string importFolderPath;
         private string exportFileName;
         private string exportFolderPath;
@@ -19,7 +16,7 @@
             {
                 if (this.importFolderPath == null)
                 {
-                    return DefaultImportFolderPath;
+                    return Constants.DefaultImportFolderPath;
                 }
 
                 return this.importFolderPath;
@@ -39,7 +36,7 @@
             {
                 if (this.exportFileName == null)
                 {
-                    return DefaultExportFileName;
+                    return Constants.DefaultExportFileName;
                 }
 
                 return this.exportFileName;
@@ -59,7 +56,7 @@
             {
                 if (this.exportFolderPath == null)
                 {
-                    return DefaultExportFolderPath;
+                    return Constants.DefaultExportFolderPath;
                 }
 
                 return this.exportFolderPath;

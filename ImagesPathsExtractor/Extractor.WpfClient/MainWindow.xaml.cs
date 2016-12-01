@@ -1,11 +1,13 @@
 ﻿namespace Extractor.WpfClient
 {
-    using Contracts;
+    using System;
     using System.Windows;
+    using System.Windows.Forms;
+    using Contracts;
 
     public partial class MainWindow : Window
     {
-        private IDataContext mainWindowContext;
+        private MainWindowDataContex mainWindowContext;
 
         public MainWindow()
         {
@@ -16,6 +18,13 @@
 
         private void ImagesFolderBrowse(object sender, RoutedEventArgs e)
         {
+            FolderBrowserDialog fDialog = new FolderBrowserDialog();
+            fDialog.RootFolder = Environment.SpecialFolder.MyComputer;
+            fDialog.SelectedPath = @"C:\BBB";
+            if (fDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                mainWindowContext.ImportFolderPath = fDialog.SelectedPath.ToString().Replace('\\', '/') + "/";
+            }
 
         }
     }
