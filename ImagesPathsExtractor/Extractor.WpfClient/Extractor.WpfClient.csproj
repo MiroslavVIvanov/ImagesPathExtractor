@@ -102,6 +102,12 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Extractor.Dialoger\Extractor.Dialoger.csproj">
+      <Project>{3CB4A0F7-29C3-4386-B15F-76D26EA1C20B}</Project>
+      <Name>Extractor.Dialoger</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

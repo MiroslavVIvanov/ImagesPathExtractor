@@ -6,15 +6,14 @@
         xmlns:local="clr-namespace:Extractor.WpfClient"
         mc:Ignorable="d"
         Title="Images Paths Extractor" 
-        Height="280"
+        Height="300"
         Width="425"
         ResizeMode="NoResize"
         WindowStyle="ThreeDBorderWindow"
 >
     <Border 
-        Margin="5 1 5 5" 
         BorderBrush="#007ACC" 
-        BorderThickness="5">
+        BorderThickness="2">
 
         <Grid
             Background="#252526">
@@ -68,7 +67,7 @@
                 Padding="3"
                 Content="Browse"
                 Foreground="#59B0F4"
-                Click="ImagesFolderBrowse"
+                Click="BrowseImagesFolderClicked"
                 />
 
             <Button
@@ -93,7 +92,7 @@
                 Background="#333337"
                 Foreground="#59B0F4"
                 Minimum="0"
-                Margin="30 0 30 0"
+                Margin="30 0 30 5"
                 BorderThickness="0"
                 />
 
@@ -162,7 +161,23 @@
                 Padding="3"
                 Content="Browse"
                 Foreground="#59B0F4"
+                Click="BrowseExportFolderClicked"
                 />
+
+            <Border 
+                BorderThickness="1" 
+                BorderBrush="#3F3F46"
+                Grid.Row="0"
+                Grid.Column="0"
+                Grid.ColumnSpan="3"/>
+
+            <Border 
+                BorderThickness="1" 
+                BorderBrush="#3F3F46"
+                Grid.Row="3"
+                Grid.RowSpan="3"
+                Grid.Column="0"
+                Grid.ColumnSpan="3"/>
 
             <Grid
                 Grid.Row="6"

@@ -3,6 +3,8 @@
     using System.ComponentModel;
     using Contracts;
     using Common;
+    using System.Windows.Forms;
+    using System;
 
     public class MainWindowDataContex : IDataContext, INotifyPropertyChanged
     {
@@ -74,20 +76,8 @@
 
         public void OnPropertyChanged(string propertyName)
         {
-            PropertyChangedEventHandler handler = PropertyChanged;
-
-            if (handler != null)
-            {
-                handler(this, new PropertyChangedEventArgs(propertyName));
-            }
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-
-        //public event PropertyChangedEventHandler PropertyChanged;
-
-        //public void OnPropertyChanged(string propertyName)
-        //{
-        //    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        //}
     }
 }
