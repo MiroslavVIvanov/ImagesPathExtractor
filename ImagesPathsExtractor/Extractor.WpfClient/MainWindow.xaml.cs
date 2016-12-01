@@ -10,8 +10,13 @@
         public MainWindow()
         {
             InitializeComponent();
-
             this.mainWindowContext = new MainWindowDataContex();
+            this.DataContext = this.mainWindowContext;
+        }
+
+        private void ImagesFolderBrowse(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

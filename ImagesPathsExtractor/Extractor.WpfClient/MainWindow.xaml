@@ -15,7 +15,7 @@
         Margin="5 1 5 5" 
         BorderBrush="#007ACC" 
         BorderThickness="5">
-        
+
         <Grid
             Background="#252526">
             <Grid.RowDefinitions>
@@ -39,7 +39,7 @@
                 Foreground="#59B0F4"
                 VerticalAlignment="Center"
                 Margin="1 0 0 0"/>
-            
+
             <TextBox Grid.Row="0"
                  Grid.Column="1"
                  Margin="1 5 5 1"
@@ -50,8 +50,12 @@
                  FontSize="12"
                  Padding="3"
                  Foreground="#59B0F4"
-                 />
-            
+                 Text="{
+                    Binding ImportFolderPath, 
+                    Mode=TwoWay, 
+                    UpdateSourceTrigger=PropertyChanged
+                }"/>
+
             <Button
                 Grid.Row="0"
                 Grid.Column="2"
@@ -64,8 +68,9 @@
                 Padding="3"
                 Content="Browse"
                 Foreground="#59B0F4"
+                Click="ImagesFolderBrowse"
                 />
-            
+
             <Button
                 Grid.Row="1"
                 Grid.Column="0"
@@ -80,7 +85,7 @@
                 Content="Extract Paths"
                 Foreground="#59B0F4"
                 />
-            
+
             <ProgressBar
                 Grid.Row="2"
                 Grid.Column="0"
@@ -97,10 +102,10 @@
                 Grid.Column="0"
                 Content="File name: "
                 VerticalAlignment="Center"
-                Margin="10 10 10 1"
+                Margin="5 5 5 1"
                 Foreground="#59B0F4"
                 />
-            
+
             <TextBox 
                 Grid.Row="3"
                  Grid.Column="1"
@@ -112,17 +117,21 @@
                  FontSize="12"
                  Padding="3"
                  Foreground="#59B0F4"
-                 />
-            
+                 Text="{
+                     Binding ExportFileName, 
+                     Mode=TwoWay, 
+                     UpdateSourceTrigger=PropertyChanged}"
+            />
+
             <Label
                 Grid.Row="4"
                 Grid.Column="0"
-                Content="File name: "
+                Content="Export folder: "
                 VerticalAlignment="Center"
-                Margin="10 1 10 10"
+                Margin="5 1 5 5"
                 Foreground="#59B0F4"
                 />
-            
+
             <TextBox 
                 Grid.Row="4"
                  Grid.Column="1"
@@ -134,8 +143,12 @@
                  FontSize="12"
                  Padding="3"
                  Foreground="#59B0F4"
+                 Text="{
+                     Binding ExportFolderPath, 
+                     Mode=TwoWay, 
+                     UpdateSourceTrigger=PropertyChanged}"
                  />
-    
+
             <Button
                 Grid.Row="4"
                 Grid.Column="2"
@@ -150,7 +163,7 @@
                 Content="Browse"
                 Foreground="#59B0F4"
                 />
-            
+
             <Grid
                 Grid.Row="6"
                 Grid.Column="0"
