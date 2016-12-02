@@ -4,6 +4,9 @@
     using System.Windows;
     using Dialoger;
     using Common;
+    using Models;
+    using System.Threading.Tasks;
+    using System.Drawing;
 
     public partial class MainWindow : Window
     {
@@ -36,9 +39,26 @@
             try
             {
                 string[] paths = Directory.GetFiles(
-                    imagesFolderPath, 
-                    Constants.DefaultImageExtension, 
+                    imagesFolderPath,
+                    Constants.DefaultImageExtension,
                     SearchOption.AllDirectories);
+
+                ImageInfo[] images = new ImageInfo[paths.Length];
+
+                Parallel.For(0, images.Length, i =>
+                {
+                    using (Bitmap image = new Bitmap(paths[i]))
+                    {
+                        images[i] = new ImageInfo(
+                            paths[i],
+                            image.Height,
+                            image.Width,
+                            image.VerticalResolution,
+                            image.HorizontalResolution);
+                    }
+                });
+
+                this.context.Images = images;
             }
             catch (System.Exception ex)
             {

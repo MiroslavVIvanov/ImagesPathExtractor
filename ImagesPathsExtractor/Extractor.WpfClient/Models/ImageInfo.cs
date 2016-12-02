@@ -7,15 +7,15 @@
         private int imageHeight;
         private int imageWidth;
 
-        private int verticalResolution;
-        private int horizontalResolution;
+        private float verticalResolution;
+        private float horizontalResolution;
 
         public ImageInfo(
             string fullPath, 
             int imageHeight, 
             int imageWidth, 
-            int verticalResolution, 
-            int horizontalResolution)
+            float verticalResolution, 
+            float horizontalResolution)
         {
             this.fullPath = fullPath;
             this.imageHeight = imageHeight;

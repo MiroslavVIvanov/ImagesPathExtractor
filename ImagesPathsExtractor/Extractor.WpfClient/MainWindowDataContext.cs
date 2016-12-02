@@ -1,16 +1,18 @@
 ﻿namespace Extractor.WpfClient
 {
+    using System.Collections.Generic;
     using System.ComponentModel;
-    using Contracts;
     using Common;
-    using System.Windows.Forms;
-    using System;
+    using Contracts;
+    using Models;
 
     public class MainWindowDataContex : IDataContext, INotifyPropertyChanged
     {
         private string importFolderPath;
         private string exportFileName;
         private string exportFolderPath;
+
+        private ICollection<ImageInfo> images;
 
         public string ImportFolderPath
         {
@@ -72,12 +74,24 @@
             }
         }
 
+        public ICollection<ImageInfo> Images
+        {
+            get
+            {
+                return this.images;
+            }
+
+            internal set
+            {
+                this.images = value;
+            }
+        }
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         public void OnPropertyChanged(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
-
     }
 }
