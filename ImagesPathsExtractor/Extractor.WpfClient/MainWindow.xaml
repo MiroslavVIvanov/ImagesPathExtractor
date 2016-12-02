@@ -83,6 +83,7 @@
                 Padding="3"
                 Content="Extract Paths"
                 Foreground="#59B0F4"
+                Click="ExtractPathsButtonClick"
                 />
 
             <ProgressBar

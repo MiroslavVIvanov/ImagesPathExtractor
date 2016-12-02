@@ -3,11 +3,11 @@
     using System;
     using System.Windows.Forms;
 
-    public class DialogOpener
+    public class DialogShower
     {
         private string defaultFolderPath;
 
-        public DialogOpener(string folderPathWhenSelectionNotSuccessful = null)
+        public DialogShower(string folderPathWhenSelectionNotSuccessful = null)
         {
             this.DefaultFolderPath = folderPathWhenSelectionNotSuccessful;
         }
