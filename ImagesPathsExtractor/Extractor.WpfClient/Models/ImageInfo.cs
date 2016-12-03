@@ -1,4 +1,5 @@
 ﻿using Extractor.WpfClient.Contracts;
+using System.Text;
 
 namespace Extractor.WpfClient.Models
 {
@@ -89,6 +90,21 @@ namespace Extractor.WpfClient.Models
             {
                 horizontalResolution = value;
             }
+        }
+
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+
+            sb.AppendFormat(
+                "{0}\t{1}\t{2}\t{3}\t{4}\t", 
+                this.FullPath, 
+                this.ImageHeight, 
+                this.ImageWidth, 
+                this.VerticalResolution, 
+                this.HorizontalResolution);
+
+            return sb.ToString();
         }
     }
 }

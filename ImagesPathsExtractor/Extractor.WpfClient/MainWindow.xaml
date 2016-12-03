@@ -215,6 +215,7 @@
                 Padding="3"
                 Content="Save as *.txt"
                 Foreground="#59B0F4"
+                Click="ExportToTxtBtnClicked"
                 />
             </Grid>
         </Grid>

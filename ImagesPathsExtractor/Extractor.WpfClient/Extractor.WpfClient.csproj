@@ -70,6 +70,9 @@
     </Compile>
     <Compile Include="Common\Constants.cs" />
     <Compile Include="Contracts\IDataContext.cs" />
+    <Compile Include="Contracts\IExporter.cs" />
+    <Compile Include="Contracts\IFileInfo.cs" />
+    <Compile Include="Exporters\TxtExporter.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>

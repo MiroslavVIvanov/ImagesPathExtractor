@@ -1,9 +1,12 @@
-﻿using System.Collections.Generic;
-
-namespace Extractor.WpfClient.Contracts
+﻿namespace Extractor.WpfClient.Contracts
 {
+    using System.Collections.Generic;
+
     public interface IExporter
     {
-        void Export(ICollection<IFileInfo> collectionOfFileInformationToExport);
+        void Export<T>(
+                    ICollection<T> fileInformations,
+                    string folderToExportTo,
+                    string fileName) where T : IFileInfo;
     }
 }

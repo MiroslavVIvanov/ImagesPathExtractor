@@ -7,6 +7,8 @@
     using Models;
     using System.Threading.Tasks;
     using System.Drawing;
+    using Exporters;
+    using Contracts;
 
     public partial class MainWindow : Window
     {
@@ -64,6 +66,12 @@
             {
                 throw new System.Exception(ex.Message);
             }
+        }
+
+        private void ExportToTxtBtnClicked(object sender, RoutedEventArgs e)
+        {
+            IExporter exporter = new TxtExporter();
+            exporter.Export(this.context.Images, this.context.ExportFolderPath, this.context.ExportFileName);
         }
     }
 }
