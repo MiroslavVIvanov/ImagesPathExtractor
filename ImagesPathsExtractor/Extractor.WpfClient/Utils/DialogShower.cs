@@ -1,4 +1,4 @@
-﻿namespace Extractor.Dialoger
+﻿namespace Extractor.WpfClient.Dialoger
 {
     using System;
     using System.Windows.Forms;
