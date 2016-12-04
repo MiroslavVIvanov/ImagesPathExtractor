@@ -201,6 +201,7 @@
                 Padding="3"
                 Content="Save as *.xls"
                 Foreground="#59B0F4"
+                IsEnabled="{Binding AreExportButtonsAvailable}"
                 />
 
                 <Button
@@ -216,6 +217,7 @@
                 Content="Save as *.txt"
                 Foreground="#59B0F4"
                 Click="ExportToTxtBtnClicked"
+                IsEnabled="{Binding AreExportButtonsAvailable}"
                 />
             </Grid>
         </Grid>

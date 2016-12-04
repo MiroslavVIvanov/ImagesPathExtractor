@@ -14,6 +14,8 @@
 
         private ICollection<ImageInfo> images;
 
+        private bool areExportButtonsAvailable;
+
         public string ImportFolderPath
         {
             get
@@ -84,6 +86,29 @@
             internal set
             {
                 this.images = value;
+
+                if (this.images != null && this.images.Count > 0)
+                {
+                    this.AreExportButtonsAvailable = true;
+                }
+                else
+                {
+                    this.AreExportButtonsAvailable = false;
+                }
+            }
+        }
+
+        public bool AreExportButtonsAvailable
+        {
+            get
+            {
+                return this.areExportButtonsAvailable;
+            }
+
+            set
+            {
+                this.areExportButtonsAvailable = value;
+                OnPropertyChanged("AreExportButtonsAvailable");
             }
         }
 
