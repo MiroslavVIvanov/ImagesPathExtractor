@@ -1,5 +1,6 @@
 ﻿namespace Extractor.WpfClient
 {
+    using System;
     using System.Collections.Generic;
     using System.ComponentModel;
     using Common;
@@ -16,6 +17,12 @@
 
         private bool areExportButtonsAvailable;
 
+
+        public MainWindowDataContex()
+        {
+            this.images = new List<ImageInfo>();
+        }
+
         public string ImportFolderPath
         {
             get
@@ -30,7 +37,16 @@
 
             set
             {
-                //todo: validation of the folder path
+                if (value == null)
+                {
+                    throw new ArgumentNullException("Import folder path can not be null");
+                }
+
+                if (value == string.Empty)
+                {
+                    throw new ArgumentException("Import folder path can not be empty string");
+                }
+
                 this.importFolderPath = value;
                 OnPropertyChanged("ImportFolderPath");
             }
@@ -50,7 +66,16 @@
 
             set
             {
-                //todo: validation
+                if (value == null)
+                {
+                    throw new ArgumentNullException("Export file name can not be null");
+                }
+
+                if (value == string.Empty)
+                {
+                    throw new ArgumentException("Export file name can not be empty string");
+                }
+
                 this.exportFileName = value;
                 OnPropertyChanged("ExportFileName");
             }
@@ -70,7 +95,16 @@
 
             set
             {
-                //todo: validation
+                if (value == null)
+                {
+                    throw new ArgumentNullException("Export folder path can not be null");
+                }
+
+                if (value == string.Empty)
+                {
+                    throw new ArgumentException("Export folder path can not be empty string");
+                }
+
                 this.exportFolderPath = value;
                 OnPropertyChanged("ExportFolderPath");
             }
@@ -85,30 +119,17 @@
 
             internal set
             {
+                if (value == null)
+                {
+                    throw new ArgumentNullException("The ImageInfo collection can not be null");
+                }
+
+                if (value.Count == 0)
+                {
+                    throw new ArgumentNullException("The ImageInfo collection can not be empty");
+                }
+
                 this.images = value;
-
-                if (this.images != null && this.images.Count > 0)
-                {
-                    this.AreExportButtonsAvailable = true;
-                }
-                else
-                {
-                    this.AreExportButtonsAvailable = false;
-                }
-            }
-        }
-
-        public bool AreExportButtonsAvailable
-        {
-            get
-            {
-                return this.areExportButtonsAvailable;
-            }
-
-            set
-            {
-                this.areExportButtonsAvailable = value;
-                OnPropertyChanged("AreExportButtonsAvailable");
             }
         }
 
